@@ -1,0 +1,8 @@
+{
+    "autoload": {
+        "psr-4": {"Lunch\\": "src/"}
+    },
+    "require": {
+        "silex/silex": "~2.0"
+    }
+}
