@@ -6,6 +6,7 @@ class Recipe
 {
     private $title;
     private $ingredients;
+    private $countBestBeforeExpiredIngredients = 0;
 
     public function __construct(string $title, array $ingredients)
     {
@@ -23,18 +24,15 @@ class Recipe
         return $this->ingredients;
     }
 
-    public function countBestBeforeExpiredIngredients() : int
+    public function getCountBestBeforeExpiredIngredients()
     {
-        $usedByCount = array_reduce(
-            $this->ingredients,
-            function ($count, $ingredient) {
-                if ($ingredient->getBestBefore() < new \DateTime()) {
-                    $count++;
-                }
-                return $count;
-            }, 0
-        );
+        return $this->countBestBeforeExpiredIngredients;
+    }
 
-        return $usedByCount;
+    public function setCountBestBeforeExpiredIngredients($countBestBeforeExpiredIngredients)
+    {
+        $this->countBestBeforeExpiredIngredients = $countBestBeforeExpiredIngredients;
+
+        return $this;
     }
 }

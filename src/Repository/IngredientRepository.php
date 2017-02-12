@@ -21,6 +21,15 @@ class IngredientRepository extends InMemoryRepository
         });
     }
 
+    public function findOneByTitle($title)
+    {
+        $result = array_filter($this->data, function ($ingredient) use ($title) {
+            return $ingredient->getTitle() === $title;
+        });
+
+        return $result[0] ?? null;
+    }
+
     private function resolveData()
     {
         $this->data = array_map(

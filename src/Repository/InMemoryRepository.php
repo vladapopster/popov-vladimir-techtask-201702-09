@@ -6,7 +6,7 @@ class InMemoryRepository
 {
     protected $data;
 
-    public function loadData(string $source)
+    protected function loadData(string $source)
     {
         if (!file_exists($source)) {
             throw new \RuntimeException('Invalid repository source.');
