@@ -2,7 +2,11 @@
     "autoload": {
         "psr-4": {"Lunch\\": "src/"}
     },
+    "autoload-dev": {
+        "psr-4": { "Lunch\\Tests\\": "tests/src/" }
+    },
     "require": {
-        "silex/silex": "~2.0"
+        "silex/silex": "~2.0",
+        "phpunit/phpunit": "6.0.*"
     }
 }
