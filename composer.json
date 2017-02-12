@@ -9,6 +9,7 @@
         "silex/silex": "~2.0",
         "phpunit/phpunit": "^6.0",
         "jms/serializer": "^1.4",
-        "symfony/phpunit-bridge": "^3.2"
+        "symfony/phpunit-bridge": "^3.2",
+        "abraham/twitteroauth": "^0.7.2"
     }
 }
