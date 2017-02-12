@@ -8,6 +8,7 @@ $app = new Silex\Application();
 
 $app->get('/lunch', function() use($app) {
     $availableFrom = new \DateTime();
+
     return (new RecipeController())->lunchAction($availableFrom);
 });
 
